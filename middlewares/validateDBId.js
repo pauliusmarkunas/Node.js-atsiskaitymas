@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export default function validateUserIdParam(req, res, next) {
+export default function validateDBIdParam(req, res, next) {
   try {
     const { id } = req.params;
 

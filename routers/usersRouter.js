@@ -6,7 +6,7 @@ import {
   getUserById,
   updateUser,
 } from "../controllers/usersController.js";
-import validateUserIdParam from "../middlewares/validateUserId.js";
+import validateDBIdParam from "../middlewares/validateDBId.js";
 
 const usersRouter = express.Router();
 
@@ -14,15 +14,15 @@ const usersRouter = express.Router();
 usersRouter.get("/", getAllUsers);
 
 //getUserById
-usersRouter.get("/:id", validateUserIdParam, getUserById);
+usersRouter.get("/:id", validateDBIdParam, getUserById);
 
 //createUser
 usersRouter.post("/", createUser);
 
 //updateUser
-usersRouter.put("/:id", validateUserIdParam, updateUser);
+usersRouter.put("/:id", validateDBIdParam, updateUser);
 
 //deleteUser
-usersRouter.delete("/:id", validateUserIdParam, deleteUser);
+usersRouter.delete("/:id", validateDBIdParam, deleteUser);
 
 export default usersRouter;
